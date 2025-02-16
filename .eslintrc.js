@@ -1,8 +1,8 @@
 module.exports = {
-  extends: ['next/core-web-vitals'],
+  extends: ['next'],
   rules: {
     'react/no-unescaped-entities': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    'no-unused-vars': 'warn',
     'react-hooks/exhaustive-deps': 'warn'
   },
   parserOptions: {
