@@ -4,10 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 10, 1, 24;
+  --background-end-rgb: 10, 1, 24;
+}
+
 body {
   font-family: "Inter", sans-serif;
-  background-color: #0a0118;
-  color: white;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
 }
 
 ::selection {
@@ -72,5 +78,119 @@ html {
 
 .nav-link:hover::after {
   transform: translateX(0);
+}
+
+/* Terminal scrollbar styles */
+.terminal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #00ffcc transparent;
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 204, 0.2);
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 204, 0.3);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.animate-typewriter {
+  position: relative;
+  width: max-content;
+  color: transparent;
+}
+
+.animate-typewriter::before,
+.animate-typewriter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.animate-typewriter::before {
+  background: #0a0118;
+  animation: typewriter 2s steps(40) forwards;
+}
+
+.animate-typewriter::after {
+  width: 0.125em;
+  background: #00ffcc;
+  animation: typewriter 2s steps(40) forwards,
+             caret 0.5s steps(2) infinite;
+}
+
+.animate-typewriter.delay-1::before,
+.animate-typewriter.delay-1::after {
+  animation-delay: 2s;
+}
+
+.animate-typewriter.delay-2::before,
+.animate-typewriter.delay-2::after {
+  animation-delay: 4s;
+}
+
+/* Add these new styles */
+.hero-gradient {
+  background: radial-gradient(circle at center, rgba(0, 255, 204, 0.1) 0%, transparent 70%);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+.ai-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 204, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 204, 0.05) 1px, transparent 1px);
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 

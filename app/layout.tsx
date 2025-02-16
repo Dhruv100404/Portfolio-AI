@@ -10,6 +10,20 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Dhruv Thakkar - AI Engineer",
   description: "Portfolio of Dhruv Thakkar - AI Engineer & Innovator",
+  icons: {
+    icon: { 
+      url: '/Dhruv_Thakkar.jpg',
+      type: 'image/jpeg'
+    },
+    shortcut: { 
+      url: '/Dhruv_Thakkar.jpg',
+      type: 'image/jpeg'
+    },
+    apple: {
+      url: '/Dhruv_Thakkar.jpg',
+      type: 'image/jpeg'
+    },
+  },
 };
 
 export default function RootLayout({
