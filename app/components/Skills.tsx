@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion"
 import {  SiPython, SiTensorflow, SiPytorch, SiOpenai, SiScikitlearn, SiJupyter, SiMongodb, SiGit, 
-          SiReact, SiTailwindcss,SiFastapi,SiFlask,SiHuggingface} 
+          SiReact, SiTailwindcss,SiFastapi,SiFlask} 
         from "react-icons/si"
 import { BsRobot, BsDatabase } from "react-icons/bs"
 import { GiPineTree } from "react-icons/gi"
 import { VscAzure } from "react-icons/vsc"
+import { FaRobot } from "react-icons/fa"
+
 export default function Skills() {
   const skills = [
     // AI/ML Core
@@ -42,7 +44,7 @@ export default function Skills() {
     },
     {
       name: "Hugging Face",
-      icon: <SiHuggingface className="w-8 h-8" />,
+      icon: <FaRobot className="w-8 h-8" />,
       color: "#FFD21E"
     },
     {

@@ -31,31 +31,21 @@ that push the boundaries of what's possible.
 `
 
   useEffect(() => {
-    let index = 0
-    let isScrolling = false
+    let currentText = ""
+    let currentIndex = 0
 
-    const timer = setInterval(() => {
-      if (index <= fullText.length) {
-        setText(fullText.slice(0, index))
-        index++
-        
-        if (terminalRef.current && !isScrolling) {
-          isScrolling = true
-          terminalRef.current.scrollTo({
-            top: terminalRef.current.scrollHeight,
-            behavior: 'smooth'
-          })
-          setTimeout(() => {
-            isScrolling = false
-          }, 100)
-        }
+    const interval = setInterval(() => {
+      if (currentIndex < fullText.length) {
+        currentText += fullText[currentIndex]
+        setText(currentText)
+        currentIndex++
       } else {
-        clearInterval(timer)
+        clearInterval(interval)
       }
-    }, 30)
+    }, 20)
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(interval)
+  }, [fullText])
 
   return (
     <motion.div

@@ -91,13 +91,10 @@ export default function Projects() {
 
   useEffect(() => {
     if (!isPaused) {
-      const interval = setInterval(() => {
-        handleNext()
-      }, 3000) // Change project every 3 seconds
-
+      const interval = setInterval(handleNext, 3000)
       return () => clearInterval(interval)
     }
-  }, [isPaused])
+  }, [isPaused, handleNext])
 
   return (
     <section id="projects" className="py-8 md:py-10 bg-[#0a0118] relative min-h-screen flex flex-col justify-center overflow-hidden">

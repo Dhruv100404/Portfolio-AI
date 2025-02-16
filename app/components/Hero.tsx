@@ -36,7 +36,7 @@ export default function Hero() {
                   transition={{ delay: 0.4 }}
                   className="block text-[#ff3366]"
                 >
-                  I'm Dhruv Thakkar
+                  I&apos;m Dhruv Thakkar
                 </motion.span>
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
