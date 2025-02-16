@@ -13,8 +13,6 @@ interface Project {
   title: string
   description: string
   tech: string[]
-  github?: string
-  demo?: string
   category: string
 }
 
@@ -30,38 +28,30 @@ export default function Projects() {
       title: "Enterprise RAG System",
       description: "Built a production-grade RAG system using LangChain, FastAPI, and Vector Databases with 95% accuracy in information retrieval. Implemented advanced caching and optimization techniques.",
       tech: ["Python", "LangChain", "OpenAI", "Pinecone", "FastAPI"],
-      github: "https://github.com/yourusername/rag-system",
-      demo: "https://demo.example.com",
       category: "AI Systems"
     },
     {
-      title: "LLM Fine-tuning Pipeline",
-      description: "Developed automated pipeline for fine-tuning LLMs using PEFT/LoRA techniques. Achieved 40% improvement in task-specific performance while reducing training costs.",
-      tech: ["PyTorch", "Hugging Face", "AWS SageMaker", "MLflow"],
-      github: "https://github.com/yourusername/llm-finetuning",
+      title: "Learn AI",
+      description: "Integration of CBSE curriculum with AI to provide personalized learning experiences.Functioning as a chatbot that can answer questions and provide explanations for the topics. With detailed explanations for the topics and giving page numbers to for thier reference.",
+      tech: ["React", "Flask", "Tailwind CSS", "Python", "MongoDB"],
       category: "Machine Learning"
     },
     {
       title: "AI-Dialer",
-      description: "Developed an intelligent dialing system using AI for automated call handling and routing. Integrated speech recognition and natural language processing for real-time conversation analysis.",
-      tech: ["Python", "TensorFlow", "FastAPI", "WebRTC", "Redis", "Docker"],
-      github: "https://github.com/yourusername/ai-dialer",
+      description: "Developed an intelligent dialing system using AI for automated call handling and routing. Integrated speech recognition and natural language processing for real-time conversation analysis. Further more it also schedules the calls and sends the emails to the clients of the call Schedule.",
+      tech: ["Python", "TensorFlow", "FastAPI", "WebRTC",],
       category: "AI Systems"
     },
     {
       title: "Chatbot Development",
       description: "Created an advanced conversational AI chatbot with context awareness and multi-turn dialogue capabilities. Implemented custom training pipeline for domain-specific knowledge.",
-      tech: ["Python", "LangChain", "OpenAI", "MongoDB", "Next.js", "TypeScript"],
-      github: "https://github.com/yourusername/chatbot",
-      demo: "https://demo.example.com/chatbot",
+      tech: ["Python", "LangChain", "OpenAI", "MongoDB",],
       category: "AI Systems"
     },
     {
       title: "SummerEase",
-      description: "Built a text summarization platform using state-of-the-art language models. Features include multi-document summarization, key points extraction, and customizable summary lengths.",
-      tech: ["Python", "Transformers", "FastAPI", "React", "PostgreSQL", "Redis"],
-      github: "https://github.com/yourusername/summerease",
-      demo: "https://summerease.example.com",
+      description: "Built a text summarization platform using state-of-the-art language models. Features include Q/A with the Document and also the Summary of the Document. There was one more section in which the user can enter url and get the summary of the website.",
+      tech: ["Python", "Transformers", "FastAPI", "React", "PostgreSQL"],
       category: "Machine Learning"
     }
   ]
@@ -150,26 +140,6 @@ export default function Projects() {
                     <p className="text-gray-400 mb-4">
                       {projects[currentProject].description}
                     </p>
-                  </div>
-                  <div className="flex gap-3">
-                    {projects[currentProject].github && (
-                      <Link 
-                        href={projects[currentProject].github}
-                        target="_blank"
-                        className="text-gray-400 hover:text-[#00ffcc] transition-colors"
-                      >
-                        <Github size={20} />
-                      </Link>
-                    )}
-                    {projects[currentProject].demo && (
-                      <Link
-                        href={projects[currentProject].demo}
-                        target="_blank"
-                        className="text-gray-400 hover:text-[#00ffcc] transition-colors"
-                      >
-                        <ExternalLink size={20} />
-                      </Link>
-                    )}
                   </div>
                 </div>
 
