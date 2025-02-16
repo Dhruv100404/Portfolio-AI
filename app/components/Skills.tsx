@@ -8,6 +8,7 @@ import { BsRobot, BsDatabase } from "react-icons/bs"
 import { GiPineTree } from "react-icons/gi"
 import { VscAzure } from "react-icons/vsc"
 import { FaRobot } from "react-icons/fa"
+import "tailwindcss/tailwind.css"
 
 export default function Skills() {
   const skills = [

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import "tailwindcss/tailwind.css"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)

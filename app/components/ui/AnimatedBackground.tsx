@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
+import "tailwindcss/tailwind.css"
 
 function Particles() {
   const [particles, setParticles] = useState<Array<{

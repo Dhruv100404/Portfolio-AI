@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import "tailwindcss/tailwind.css"
 
 export default function Terminal() {
   const [text, setText] = useState("")

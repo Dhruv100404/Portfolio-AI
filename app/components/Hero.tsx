@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Terminal from "./Terminal"
 import Link from "next/link"
+import "tailwindcss/tailwind.css"
 
 export default function Hero() {
   return (

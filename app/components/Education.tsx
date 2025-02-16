@@ -5,6 +5,7 @@ import { useInView } from "framer-motion"
 import { useRef } from "react"
 import AnimatedBackground from "./ui/AnimatedBackground"
 import { GraduationCap, Calendar, MapPin } from "lucide-react"
+import "tailwindcss/tailwind.css"
 
 interface Education {
   degree: string

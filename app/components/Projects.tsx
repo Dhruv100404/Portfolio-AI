@@ -8,6 +8,7 @@ import { Github, ExternalLink, Folder, Code2, ChevronLeft, ChevronRight } from "
 import Link from "next/link"
 import AIFlowAnimation from './ui/AIFlowAnimation'
 import ModernGradientAnimation from './ui/ModernGradientAnimation'
+import "tailwindcss/tailwind.css"
 
 interface Project {
   title: string
