@@ -15,8 +15,6 @@ interface Project {
   description: string
   tech: string[]
   category: string
-  github: string
-  demo: string
 }
 
 export default function Projects() {
@@ -28,44 +26,40 @@ export default function Projects() {
 
   const projects: Project[] = [
     {
-      title: "Enterprise RAG System",
-      description: "Built a production-grade RAG system using LangChain, FastAPI, and Vector Databases with 95% accuracy in information retrieval. Implemented advanced caching and optimization techniques.",
-      tech: ["Python", "LangChain", "OpenAI", "Pinecone", "FastAPI"],
-      category: "AI Systems",
-      github: "https://github.com/yourusername/enterprise-rag-system",
-      demo: "https://your-demo-link.com"
+      title: "LogiAI",
+      description: "Engineered an AI-powered logistics ecosystem deployed across various international client divisions, automating end-to-end workflows and reporting dashboards. Developed an automated quotation system that processes incoming Outlook emails, parses quotation details, and initiates the workflow for faster client response.",
+      tech: ["Python", "AI/ML", "Outlook API", "Workflow Automation", "Dashboard"],
+      category: "AI Systems"
     },
     {
-      title: "Learn AI",
-      description: "Integration of CBSE curriculum with AI to provide personalized learning experiences.Functioning as a chatbot that can answer questions and provide explanations for the topics. With detailed explanations for the topics and giving page numbers to for thier reference.",
-      tech: ["React", "Flask", "Tailwind CSS", "Python", "MongoDB"],
-      category: "Machine Learning",
-      github: "https://github.com/yourusername/learn-ai",
-      demo: "https://your-demo-link.com"
+      title: "Growstack",
+      description: "Architected a Prompt-Based Workflow Builder for a no-code platform, enabling users to generate complex, custom workflows solely through natural language queries. Designed and implemented a Multi-Agent System to autonomously interpret user intent, decompose tasks, and assemble the corresponding sequence of workflow nodes.",
+      tech: ["Python", "Multi-Agent Systems", "NLP", "No-Code Platform", "Workflow Builder"],
+      category: "AI Systems"
     },
     {
-      title: "AI-Dialer",
-      description: "Developed an intelligent dialing system using AI for automated call handling and routing. Integrated speech recognition and natural language processing for real-time conversation analysis. Further more it also schedules the calls and sends the emails to the clients of the call Schedule.",
-      tech: ["Python", "TensorFlow", "FastAPI", "WebRTC",],
-      category: "AI Systems",
-      github: "https://github.com/yourusername/ai-dialer",
-      demo: "https://your-demo-link.com"
+      title: "uRecruits: Agentic Chatbot System",
+      description: "Designed and architected the backend for an advanced recruitment chatbot with a fully agentic core, shifting from traditional logic to autonomous decision-making. Built a robust Multi-Agent System (MAS) to handle complex recruitment workflows, including candidate screening, personalized Q&A, and interview scheduling coordination.",
+      tech: ["Python", "Multi-Agent Systems", "NLP", "Backend Architecture", "Recruitment AI"],
+      category: "AI Systems"
     },
     {
-      title: "Chatbot Development",
-      description: "Created an advanced conversational AI chatbot with context awareness and multi-turn dialogue capabilities. Implemented custom training pipeline for domain-specific knowledge.",
-      tech: ["Python", "LangChain", "OpenAI", "MongoDB",],
-      category: "AI Systems",
-      github: "https://github.com/yourusername/chatbot-development",
-      demo: "https://your-demo-link.com"
+      title: "Case Property Analysis",
+      description: "Led a Prompt Engineering project focused on real estate case analysis, generating optimal legal strategies based on complex court documents and property case files. Developed a sophisticated prompt structure incorporating proprietary client legal strategies to enable the AI to provide data-driven recommendations for best-course-of-action.",
+      tech: ["Python", "Prompt Engineering", "Legal AI", "Document Analysis", "Strategy Generation"],
+      category: "AI Systems"
     },
     {
-      title: "SummerEase",
-      description: "Built a text summarization platform using state-of-the-art language models. Features include Q/A with the Document and also the Summary of the Document. There was one more section in which the user can enter url and get the summary of the website.",
-      tech: ["Python", "Transformers", "FastAPI", "React", "PostgreSQL"],
-      category: "Machine Learning",
-      github: "https://github.com/yourusername/summerease",
-      demo: "https://your-demo-link.com"
+      title: "AI Dialer Voice Assistant",
+      description: "Designed and developed a real-estate voice assistant with core features: brochure queries, appointment booking, and seamless integration with email & Google Calendar. Implemented a robust bulk calling engine and analytics dashboard, built entirely with a Python backend.",
+      tech: ["Python", "Voice AI", "Google Calendar API", "Email Integration", "Analytics Dashboard"],
+      category: "AI Systems"
+    },
+    {
+      title: "LearnAI",
+      description: "AI chatbot helping students learn CBSE curriculum via RAG-based Q&A. Integrated lipsync avatar, TTS & STT for a voice-enabled experience. Provides personalized learning experiences with detailed explanations and page references for comprehensive understanding.",
+      tech: ["Python", "RAG", "TTS/STT", "Avatar Integration", "Educational AI"],
+      category: "Machine Learning"
     }
   ]
 
@@ -117,9 +111,7 @@ export default function Projects() {
       "position": index + 1,
       "name": project.title,
       "description": project.description,
-      "programmingLanguage": project.tech,
-      "codeRepository": project.github,
-      "url": project.demo
+      "programmingLanguage": project.tech
     }))
   }
 
