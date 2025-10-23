@@ -1,11 +1,9 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import AnimatedBackground from "./ui/AnimatedBackground"
-import { Github, ExternalLink, Folder, Code2, ChevronLeft, ChevronRight } from "lucide-react"
-import Link from "next/link"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import AIFlowAnimation from './ui/AIFlowAnimation'
 import ModernGradientAnimation from './ui/ModernGradientAnimation'
 import "tailwindcss/tailwind.css"
@@ -18,8 +16,6 @@ interface Project {
 }
 
 export default function Projects() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [currentProject, setCurrentProject] = useState(0)
   const [direction, setDirection] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -178,7 +174,21 @@ export default function Projects() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation */}
+            {/* Navigation Arrows */}
+            <button
+              onClick={handlePrev}
+              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#00ffcc15] text-[#00ffcc] hover:bg-[#00ffcc25] transition-colors"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-[#00ffcc15] text-[#00ffcc] hover:bg-[#00ffcc25] transition-colors"
+            >
+              <ChevronRight size={20} />
+            </button>
+
+            {/* Navigation Dots */}
             <div className="flex justify-center gap-2 mt-8">
               {projects.map((_, index) => (
                 <button

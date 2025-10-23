@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion"
 import { 
-  SiPython, SiPytorch, SiOpenai, SiMongodb, 
+  SiPython, SiPytorch, SiOpenai, 
   SiReact, SiTailwindcss, SiFastapi, SiFlask, SiJavascript, SiDocker,
   SiMicrosoftazure, SiPandas, SiNextdotjs, SiTypescript,
   SiMysql
 } from "react-icons/si"
-import { BsRobot, BsDatabase, BsMic, BsVoicemail} from "react-icons/bs"
+import { BsRobot, BsDatabase, BsVoicemail} from "react-icons/bs"
 import { GiArtificialIntelligence, GiCyberEye, GiCircuitry } from "react-icons/gi"
 import { VscAzure } from "react-icons/vsc"
 import { FaCloud, FaRocket } from "react-icons/fa"

@@ -8,29 +8,11 @@ import "tailwindcss/tailwind.css"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const [showBackToTop, setShowBackToTop] = useState(false)
-  const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
       setShowBackToTop(window.scrollY > 500)
-      
-      const sections = ["hero", "projects", "skills", "education"]
-      const scrollPosition = window.scrollY + 100
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const top = element.offsetTop
-          const height = element.offsetHeight
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section)
-            break
-          }
-        }
-      }
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
