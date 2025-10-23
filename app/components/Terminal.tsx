@@ -7,7 +7,7 @@ import "tailwindcss/tailwind.css"
 export default function Terminal() {
   const [text, setText] = useState("")
   const terminalRef = useRef<HTMLPreElement>(null)
-  
+
   const fullText = `
 > python3 load_profile.py
 > Initializing AI environment...
@@ -18,9 +18,10 @@ ROLE: AI/ML Engineer
 STATUS: Available for AI Projects
 
 SPECIALIZATIONS = [
-    "Large Language Models (LLMs)",
+    "Large Language Mode (LLMs)",
     "Retrieval Augmented Generation (RAG)",
-    "Natural Language Processing",
+    "Agentic AI",
+    "Prompt Engineering",
     "Machine Learning Systems",
 ]
 
@@ -64,8 +65,8 @@ that push the boundaries of what's possible.
       </div>
 
       {/* Terminal Content */}
-      <pre 
-        ref={terminalRef} 
+      <pre
+        ref={terminalRef}
         className="whitespace-pre-wrap text-[11px] md:text-sm 
                   min-h-[200px] md:min-h-[280px] lg:min-h-[320px] 
                   max-h-[300px] md:max-h-[400px] lg:max-h-[420px] 

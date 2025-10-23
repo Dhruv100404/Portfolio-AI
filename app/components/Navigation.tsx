@@ -33,19 +33,32 @@ export default function Navigation() {
       }
     }
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false)
+      }
+    }
+
     window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("keydown", handleKeyDown)
+    
+    // Prevent body scroll when menu is open
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("keydown", handleKeyDown)
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-
-  const navItems = [
-    { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
-    { href: "#education", label: "Education" },
-  ]
 
   const socialLinks = [
     { 
@@ -83,32 +96,7 @@ export default function Navigation() {
                 group-hover:opacity-20 blur-lg transition-opacity duration-300" />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`relative px-4 py-2 group`}
-                >
-                  <span className="relative z-10">{item.label}</span>
-                  {/* Hover effect */}
-                  <span className="absolute inset-0 bg-[#00ffcc]/5 rounded-lg scale-0 group-hover:scale-100 
-                      transition-transform duration-200" />
-                  {/* Active indicator - Modified */}
-                  {activeSection === item.href.slice(1) && (
-                    <motion.span
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 1 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute bottom-0 left-0 right-0 
-                      origin-left transform"
-                    />
-                  )}
-                </Link>
-              ))}
-            </div>
-
+            
             {/* Social Links */}
             <div className="hidden md:flex items-center space-x-4">
               {socialLinks.map((link) => (
@@ -153,36 +141,48 @@ export default function Navigation() {
           pointerEvents: isOpen ? "auto" : "none",
         }}
         className="md:hidden fixed inset-0 z-[60] bg-[#0a0118]/95 backdrop-blur-md"
+        onClick={() => setIsOpen(false)} // Close when clicking backdrop
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
-          {navItems.map((item) => (
+        <div className="flex flex-col items-center justify-center h-full px-6">
+          {/* Close button */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-6 right-6 p-2 text-gray-400 hover:text-white group"
+          >
+            <span className="relative z-10">
+              <X size={24} />
+            </span>
+            <span className="absolute inset-0 bg-[#00ffcc]/10 rounded-lg scale-0 group-hover:scale-100 
+              transition-transform duration-200" />
+          </button>
+
+          {/* Mobile Navigation Links */}
+          <div className="flex flex-col items-center space-y-8 mb-12">
             <Link
-              key={item.href}
-              href={item.href}
+              href="/"
               onClick={() => setIsOpen(false)}
-              className={`text-2xl font-medium relative group ${
-                activeSection === item.href.slice(1)
-                  ? "text-[#00ffcc]"
-                  : "text-gray-400"
-              }`}
+              className="text-2xl font-semibold text-white hover:text-[#00ffcc] transition-colors"
             >
-              <span className="relative z-10">{item.label}</span>
-              <span className="absolute inset-0 bg-[#00ffcc]/5 rounded-lg scale-0 group-hover:scale-100 
-                transition-transform duration-200" />
+              Home
             </Link>
-          ))}
-          
+          </div>
+
           {/* Mobile Social Links */}
-          <div className="flex items-center space-x-6 mt-8">
+          <div className="flex items-center space-x-6">
             {socialLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 target="_blank"
-                className="p-2 text-gray-400 hover:text-white transition-colors"
+                onClick={() => setIsOpen(false)}
+                className="p-3 text-gray-400 hover:text-white transition-colors relative group"
                 aria-label={link.label}
               >
-                {link.icon}
+                <span className="relative z-10">
+                  {link.icon}
+                </span>
+                <span className="absolute inset-0 bg-[#00ffcc]/10 rounded-lg scale-0 group-hover:scale-100 
+                  transition-transform duration-200" />
               </Link>
             ))}
           </div>
